@@ -8,7 +8,7 @@
 #endif
 
 #include "resource.h"       // 主符号
-
+#include "DialogLogin.h"
 
 // CSaleSystemsApp:
 // 有关此类的实现，请参阅 SaleSystems.cpp
@@ -28,6 +28,8 @@ public:
 // 实现
 	afx_msg void OnAppAbout();
 	DECLARE_MESSAGE_MAP()
+private:
+	CDialogLogin login;
 };
 
 extern CSaleSystemsApp theApp;

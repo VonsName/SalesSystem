@@ -90,7 +90,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -189,25 +189,35 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DialogLogin.h" />
+    <ClInclude Include="DisplayView.h" />
+    <ClInclude Include="InfoFile.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SaleSystems.h" />
     <ClInclude Include="SaleSystemsDoc.h" />
     <ClInclude Include="SaleSystemsView.h" />
+    <ClInclude Include="SelectView.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UserDialog.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DialogLogin.cpp" />
+    <ClCompile Include="DisplayView.cpp" />
+    <ClCompile Include="InfoFile.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="SaleSystems.cpp" />
     <ClCompile Include="SaleSystemsDoc.cpp" />
     <ClCompile Include="SaleSystemsView.cpp" />
+    <ClCompile Include="SelectView.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UserDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SaleSystems.rc" />
@@ -216,11 +226,18 @@
     <None Include="res\SaleSystems.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\re.ico" />
     <Image Include="res\SaleSystems.ico" />
     <Image Include="res\SaleSystemsDoc.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\user.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="SaleSystems.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
