@@ -1,20 +1,21 @@
 #pragma once
+#include "afxcmn.h"
 
 
 
-// CUserDialog 窗体视图
+// CKucun 窗体视图
 
-class CUserDialog : public CFormView
+class CKucun : public CFormView
 {
-	DECLARE_DYNCREATE(CUserDialog)
+	DECLARE_DYNCREATE(CKucun)
 
 protected:
-	CUserDialog();           // 动态创建所使用的受保护的构造函数
-	virtual ~CUserDialog();
+	CKucun();           // 动态创建所使用的受保护的构造函数
+	virtual ~CKucun();
 
 public:
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_DIALOG2 };
+	enum { IDD = IDD_DIALOG4 };
 #endif
 #ifdef _DEBUG
 	virtual void AssertValid() const;
@@ -28,14 +29,9 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 private:
-	CString role;
-	CString name;
-	CString newPwd;
-	CString surePwd;
+	CListCtrl m_list;
 public:
 	virtual void OnInitialUpdate();
-	afx_msg void OnBnClickedButton1();
-	afx_msg void OnBnClickedButton3();
 };
 
 

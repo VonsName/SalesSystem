@@ -54,6 +54,15 @@
     <ClInclude Include="UserDialog.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SaleDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Kucun.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AddDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SaleSystems.cpp">
@@ -84,6 +93,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="UserDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SaleDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Kucun.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AddDialog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

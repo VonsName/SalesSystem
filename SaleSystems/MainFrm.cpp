@@ -7,6 +7,9 @@
 #include "SelectView.h"
 #include "DisplayView.h"
 #include "UserDialog.h"
+#include "SaleDialog.h"
+#include "Kucun.h"
+#include "AddDialog.h"
 
 #include "MainFrm.h"
 
@@ -143,10 +146,37 @@ LRESULT CMainFrame::OnMyChange(WPARAM wparm, LPARAM lparam)
 
 	}else if (wparm == NM_B)
 	{
+		context.m_pNewViewClass = RUNTIME_CLASS(CSaleDialog);
+		context.m_pCurrentFrame = this;
+		context.m_pLastView = (CSaleDialog *)spliter.GetPane(0, 1);
+		spliter.DeleteView(0, 1);
+		spliter.CreateView(0, 1, RUNTIME_CLASS(CSaleDialog), CSize(600, 600), &context);
+		CSaleDialog *pNewView = (CSaleDialog *)spliter.GetPane(0, 1);
+		spliter.RecalcLayout();
+		pNewView->OnInitialUpdate();
+		spliter.SetActivePane(0, 1);
 	}else if (wparm == NM_C)
 	{
+		context.m_pNewViewClass = RUNTIME_CLASS(CKucun);
+		context.m_pCurrentFrame = this;
+		context.m_pLastView = (CKucun *)spliter.GetPane(0, 1);
+		spliter.DeleteView(0, 1);
+		spliter.CreateView(0, 1, RUNTIME_CLASS(CKucun), CSize(600, 600), &context);
+		CKucun *pNewView = (CKucun *)spliter.GetPane(0, 1);
+		spliter.RecalcLayout();
+		pNewView->OnInitialUpdate();
+		spliter.SetActivePane(0, 1);
 	}else if (wparm == NM_D)
 	{
+		context.m_pNewViewClass = RUNTIME_CLASS(CAddDialog);
+		context.m_pCurrentFrame = this;
+		context.m_pLastView = (CAddDialog *)spliter.GetPane(0, 1);
+		spliter.DeleteView(0, 1);
+		spliter.CreateView(0, 1, RUNTIME_CLASS(CAddDialog), CSize(600, 600), &context);
+		CAddDialog *pNewView = (CAddDialog *)spliter.GetPane(0, 1);
+		spliter.RecalcLayout();
+		pNewView->OnInitialUpdate();
+		spliter.SetActivePane(0, 1);
 	}else if (wparm == NM_E)
 	{
 	}

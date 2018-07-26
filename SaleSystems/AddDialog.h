@@ -1,20 +1,21 @@
 #pragma once
+#include "afxwin.h"
 
 
 
-// CUserDialog 窗体视图
+// CAddDialog 窗体视图
 
-class CUserDialog : public CFormView
+class CAddDialog : public CFormView
 {
-	DECLARE_DYNCREATE(CUserDialog)
+	DECLARE_DYNCREATE(CAddDialog)
 
 protected:
-	CUserDialog();           // 动态创建所使用的受保护的构造函数
-	virtual ~CUserDialog();
+	CAddDialog();           // 动态创建所使用的受保护的构造函数
+	virtual ~CAddDialog();
 
 public:
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_DIALOG2 };
+	enum { IDD = IDD_DIALOG5 };
 #endif
 #ifdef _DEBUG
 	virtual void AssertValid() const;
@@ -28,14 +29,17 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 private:
-	CString role;
-	CString name;
-	CString newPwd;
-	CString surePwd;
+	CComboBox m_combo;
+	int price1;
+	int num1;
+	CString m_name;
+	int price2;
+	int num2;
 public:
 	virtual void OnInitialUpdate();
-	afx_msg void OnBnClickedButton1();
+	afx_msg void OnCbnSelchangeCombo1();
 	afx_msg void OnBnClickedButton3();
+	afx_msg void OnBnClickedButton4();
 };
 
 

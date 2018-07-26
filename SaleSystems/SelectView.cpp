@@ -65,8 +65,8 @@ void CSelectView::OnInitialUpdate()
 	ctrl->InsertItem(TEXT("个人信息"), 0, 0, nullptr);
 	ctrl->InsertItem(TEXT("销售管理"), 0, 0, nullptr);
 	ctrl->InsertItem(TEXT("库存信息"), 0, 0, nullptr);
-	ctrl->InsertItem(TEXT("库存信息"), 0, 0, nullptr);
-	ctrl->InsertItem(TEXT("库存信息"), 0, 0, nullptr);
+	ctrl->InsertItem(TEXT("库存添加"), 0, 0, nullptr);
+	ctrl->InsertItem(TEXT("库存删除"), 0, 0, nullptr);
 
 
 }
@@ -91,16 +91,16 @@ void CSelectView::OnTvnSelchanged(NMHDR *pNMHDR, LRESULT *pResult)
 		 */
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_A, (WPARAM)NM_A, (LPARAM)0);
 	}
-	else if (TEXT("销售管理"))
+	else if (str==TEXT("销售管理"))
 	{
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_B, (WPARAM)NM_B, (LPARAM)0);
 	}
-	else if (TEXT("库存信息")) {
+	else if (str==TEXT("库存信息")) {
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_C, (WPARAM)NM_C, (LPARAM)0);
 	}
-	else if (TEXT("库存添加")) {
+	else if (str==TEXT("库存添加")) {
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_D, (WPARAM)NM_D, (LPARAM)0);
-	}else if (TEXT("库存删除"))
+	}else if (str==TEXT("库存删除"))
 	{
 		::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_E, (WPARAM)NM_E, (LPARAM)0);
 	}

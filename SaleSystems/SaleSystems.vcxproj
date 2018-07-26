@@ -189,11 +189,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddDialog.h" />
     <ClInclude Include="DialogLogin.h" />
     <ClInclude Include="DisplayView.h" />
     <ClInclude Include="InfoFile.h" />
+    <ClInclude Include="Kucun.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SaleDialog.h" />
     <ClInclude Include="SaleSystems.h" />
     <ClInclude Include="SaleSystemsDoc.h" />
     <ClInclude Include="SaleSystemsView.h" />
@@ -203,10 +206,13 @@
     <ClInclude Include="UserDialog.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddDialog.cpp" />
     <ClCompile Include="DialogLogin.cpp" />
     <ClCompile Include="DisplayView.cpp" />
     <ClCompile Include="InfoFile.cpp" />
+    <ClCompile Include="Kucun.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="SaleDialog.cpp" />
     <ClCompile Include="SaleSystems.cpp" />
     <ClCompile Include="SaleSystemsDoc.cpp" />
     <ClCompile Include="SaleSystemsView.cpp" />
