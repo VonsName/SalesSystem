@@ -41,6 +41,8 @@ BEGIN_MESSAGE_MAP(CAddDialog, CFormView)
 	ON_CBN_SELCHANGE(IDC_COMBO1, &CAddDialog::OnCbnSelchangeCombo1)
 	ON_BN_CLICKED(IDC_BUTTON3, &CAddDialog::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON4, &CAddDialog::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON5, &CAddDialog::OnBnClickedButton5)
+	ON_BN_CLICKED(IDC_BUTTON6, &CAddDialog::OnBnClickedButton6)
 END_MESSAGE_MAP()
 
 
@@ -133,4 +135,38 @@ void CAddDialog::OnBnClickedButton4()
 	UpdateData(FALSE);
 	m_combo.SetCurSel(0);
 	OnCbnSelchangeCombo1();
+}
+
+//添加新商品
+void CAddDialog::OnBnClickedButton5()
+{
+	UpdateData(TRUE);
+	if (m_name.IsEmpty()||num2<=0||price2<=0)
+	{
+		MessageBox(TEXT("输入商品信息有误"));
+		return;
+	}
+	CInfoFile file;
+	file.ReadDocline();
+	file.Addline(m_name, num2, price2);
+	file.WirteDocline();
+	//同步下拉框
+	m_combo.InsertString(0, m_name);
+	m_combo.SetCurSel(0);
+	OnCbnSelchangeCombo1();
+
+	m_name.Empty();
+	num2 = 0;
+	price2 = 0;
+	UpdateData(FALSE);
+	MessageBox(TEXT("添加成功"));
+}
+
+//取消添加新商品
+void CAddDialog::OnBnClickedButton6()
+{
+	m_name.Empty();
+	num2 = 0;
+	price2 = 0;
+	UpdateData(FALSE);
 }

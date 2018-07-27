@@ -63,6 +63,9 @@
     <ClInclude Include="AddDialog.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DelKuCun.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SaleSystems.cpp">
@@ -102,6 +105,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="AddDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DelKuCun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

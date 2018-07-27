@@ -190,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddDialog.h" />
+    <ClInclude Include="DelKuCun.h" />
     <ClInclude Include="DialogLogin.h" />
     <ClInclude Include="DisplayView.h" />
     <ClInclude Include="InfoFile.h" />
@@ -207,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddDialog.cpp" />
+    <ClCompile Include="DelKuCun.cpp" />
     <ClCompile Include="DialogLogin.cpp" />
     <ClCompile Include="DisplayView.cpp" />
     <ClCompile Include="InfoFile.cpp" />

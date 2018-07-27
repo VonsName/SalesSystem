@@ -10,6 +10,7 @@
 #include "SaleDialog.h"
 #include "Kucun.h"
 #include "AddDialog.h"
+#include "DelKuCun.h"
 
 #include "MainFrm.h"
 
@@ -29,6 +30,12 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_MESSAGE(NM_D, OnMyChange)
 	ON_MESSAGE(NM_E, OnMyChange)
 
+	ON_COMMAND(ID_32771, &CMainFrame::On32771)
+	ON_COMMAND(ID_32772, &CMainFrame::On32772)
+	ON_COMMAND(ID_32773, &CMainFrame::On32773)
+	ON_COMMAND(ID_32774, &CMainFrame::On32774)
+	ON_COMMAND(ID_32775, &CMainFrame::On32775)
+	ON_COMMAND(ID_32776, &CMainFrame::On32776)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -179,6 +186,55 @@ LRESULT CMainFrame::OnMyChange(WPARAM wparm, LPARAM lparam)
 		spliter.SetActivePane(0, 1);
 	}else if (wparm == NM_E)
 	{
+		context.m_pNewViewClass = RUNTIME_CLASS(CDelKuCun);
+		context.m_pCurrentFrame = this;
+		context.m_pLastView = (CDelKuCun *)spliter.GetPane(0, 1);
+		spliter.DeleteView(0, 1);
+		spliter.CreateView(0, 1, RUNTIME_CLASS(CDelKuCun), CSize(600, 600), &context);
+		CDelKuCun *pNewView = (CDelKuCun *)spliter.GetPane(0, 1);
+		spliter.RecalcLayout();
+		pNewView->OnInitialUpdate();
+		spliter.SetActivePane(0, 1);
 	}
 	return 0;
+}
+
+
+//退出
+void CMainFrame::On32771()
+{
+	exit(0);
+}
+
+
+//个人信息
+void CMainFrame::On32772()
+{
+	::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_A, (WPARAM)NM_A, (LPARAM)0);
+}
+
+//销售管理
+void CMainFrame::On32773()
+{
+	::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_B, (WPARAM)NM_B, (LPARAM)0);
+}
+
+
+
+//库存信息
+void CMainFrame::On32774()
+{
+	::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_C, (WPARAM)NM_C, (LPARAM)0);
+}
+
+//库存添加
+void CMainFrame::On32775()
+{
+	::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_D, (WPARAM)NM_D, (LPARAM)0);
+}
+
+//库存删除
+void CMainFrame::On32776()
+{
+	::PostMessage(AfxGetMainWnd()->GetSafeHwnd(), NM_E, (WPARAM)NM_E, (LPARAM)0);
 }

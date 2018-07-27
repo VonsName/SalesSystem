@@ -113,33 +113,17 @@ END
 
 IDR_MAINFRAME MENU
 BEGIN
-    POPUP "文件(&F)"
+    POPUP "开始"
     BEGIN
-        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
-        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
-        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
-        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
-        MENUITEM SEPARATOR
-        MENUITEM "打印(&P)...\tCtrl+P",           ID_FILE_PRINT
-        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
-        MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
-        MENUITEM SEPARATOR
-        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
-        MENUITEM SEPARATOR
-        MENUITEM "退出(&X)",                      ID_APP_EXIT
+        MENUITEM "退出",                          ID_32771
     END
-    POPUP "编辑(&E)"
+    POPUP "菜单"
     BEGIN
-        MENUITEM "撤消(&U)\tCtrl+Z",              ID_EDIT_UNDO
-        MENUITEM SEPARATOR
-        MENUITEM "剪切(&T)\tCtrl+X",              ID_EDIT_CUT
-        MENUITEM "复制(&C)\tCtrl+C",              ID_EDIT_COPY
-        MENUITEM "粘贴(&P)\tCtrl+V",              ID_EDIT_PASTE
-    END
-    POPUP "视图(&V)"
-    BEGIN
-        MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
-        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+        MENUITEM "个人信息",                        ID_32772
+        MENUITEM "销售管理",                        ID_32773
+        MENUITEM "库存信息",                        ID_32774
+        MENUITEM "库存添加",                        ID_32775
+        MENUITEM "库存删除",                        ID_32776
     END
     POPUP "帮助(&H)"
     BEGIN
@@ -278,6 +262,23 @@ BEGIN
     EDITTEXT        IDC_EDIT3,208,39,40,14,ES_AUTOHSCROLL
 END
 
+IDD_DIALOG6 DIALOGEX 0, 0, 310, 177
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "删除库存",IDC_STATIC,62,34,142,86
+    COMBOBOX        IDC_COMBO1,114,44,48,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "商品",IDC_STATIC,66,48,17,8
+    LTEXT           "单价",IDC_STATIC,66,63,17,8
+    LTEXT           "删除库存",IDC_STATIC,67,102,40,10
+    EDITTEXT        IDC_EDIT1,114,60,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,115,98,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "确定",IDC_BUTTON1,62,131,50,14
+    PUSHBUTTON      "取消",IDC_BUTTON2,137,131,50,14
+    LTEXT           "已有库存",IDC_STATIC,65,83,37,12
+    EDITTEXT        IDC_EDIT3,113,79,40,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -381,6 +382,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 170
     END
+
+    IDD_DIALOG6, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -411,6 +420,11 @@ BEGIN
 END
 
 IDD_DIALOG5 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG6 AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
